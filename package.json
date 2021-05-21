@@ -1,0 +1,19 @@
+{
+  "name": "prodigo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prodigo.js",
+  "dependencies": {
+    "genius-lyrics-api": "^3.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/pmlnunes/Prodigo.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
