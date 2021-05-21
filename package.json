@@ -4,6 +4,7 @@
   "description": "",
   "main": "prodigo.js",
   "dependencies": {
+    "express": "^4.17.1",
     "genius-lyrics-api": "^3.0.6"
   },
   "devDependencies": {},
