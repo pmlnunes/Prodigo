@@ -4,16 +4,13 @@ const genius = require("genius-lyrics-api")
 const path = require('path');
 
 const express = require("express");
-  
+var cors = require("cors");
 const app = express();
 
+app.use(cors());
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
-
-
-app.listen(process.env.PORT || 3000, '0.0.0.0', function() {
-	console.log(`Server is up and running on 3000 ...`);
+app.listen(process.env.PORT || 3001, function() {
+	console.log(`Server is up and running on 3001 ...`);
   });
 	
   app.get("/", (req, res) => {
@@ -25,11 +22,7 @@ app.listen(process.env.PORT || 3000, '0.0.0.0', function() {
 	}
 
 	genius.getLyrics(options).then((lyrics) => {
-		res.render('index', {
-			lyric: chooseRandomLine(lyrics)
-	
-		})
-		
+		  res.json({ message: chooseRandomLine(lyrics) });
 	});
 	//res.sendFile(path.join(__dirname, '/index.html'));
 	
