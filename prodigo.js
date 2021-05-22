@@ -31,7 +31,7 @@ app.listen(process.env.PORT || 3001, function() {
 
 const options = {
 	apiKey: '4q-SJRXo7viuaFHlhUGJgrUJH8iAMfGemvMhhd0Tj9ElrpsnajIL-5xpDN5H6mOB',
-	title: 'Vamos Bafar',
+	title: 'Esquizofrénico',
 	artist: 'Pródigo PRT',
 	optimizeQuery: true
 };
@@ -50,9 +50,15 @@ const options = {
 
 function chooseRandomLine(lyrics) {
 	arrayOfLines = lyrics.match(/[^\r\n]+/g);
-	const rndInt = Math.floor(Math.random() * arrayOfLines.length) + 1
+	uniq = [...new Set(arrayOfLines)];
 
-	console.log("Verso random do prodigo -> " + arrayOfLines[rndInt])
+	const rndInt = Math.floor(Math.random() * uniq.length) + 1
+	var verso = uniq[rndInt]
+	console.log("Verso random do prodigo -> " + verso)
+	while (verso.includes('[')) {
+		rndInt = Math.floor(Math.random() * uniq.length) + 1
+		verso = uniq[rndInt]
+	}
 
-	return arrayOfLines[rndInt]
+	return verso
 }
